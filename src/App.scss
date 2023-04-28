@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+.App {
+
+max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+ text-align: center;
+  background-color: #302C42;
+  overflow: hidden;
+}
+
+#root{
+  min-height: 100vh;
+  background-color: #302C42;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  color: white;
+  font-size: 40px;
+  
+}
