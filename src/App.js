@@ -1,17 +1,23 @@
 import React from "react";
 import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Header from "./containers/Header/Header.js";
+import Main from "./containers/Main/Main.js";
 
-
-
-import Hello from "./components/Hello.js";
-
-function App() {
+const App = () => {
   return (
-    <div style={{ backgroundColor: '#46B1DE' }} className="wrapper">
-      <Hello></Hello>
-      <button onClick={() => console.log('Click on button')}>Button</button>
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <Main />
+        {/* <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/main" element={<Main />} />
+        </Routes> */}
+      </BrowserRouter>
+    
     </div>
-    );
-}
+  );
+};
 export default App;

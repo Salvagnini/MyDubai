@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TreserPlugin = require("terser-webpack-plugin");
+const fileLoader = require('file-loader');
 
 const isProd = process.env.NODE_ENV === "production";
 module.exports = {
@@ -38,7 +39,11 @@ module.exports = {
                 },
                 exclude: /node_modules/,
             },
-        ]
+            {
+                test: /\.(jpg|jpeg|png|svg|gif|webp)$/,
+                use: ['file-loader']
+            },
+        ],
     },
     optimization: {
         minimizer: isProd ? [new CssMinimizerPlugin(), new TreserPlugin()] : [],
