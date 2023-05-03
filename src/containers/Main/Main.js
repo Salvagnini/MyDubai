@@ -1,7 +1,7 @@
 import React from "react";
 import '../Main/Main.scss';
 import slider from "../../containers/Main/image/slider.png";
-
+import logo2 from "../../containers/Main/image/Rectangle 14.png";
 
 
  const Main = () => {
@@ -9,8 +9,8 @@ import slider from "../../containers/Main/image/slider.png";
     return (
         <div className="main">
             <img src={slider} alt="slider" /> 
-
-            <div className="nav__text">
+            <div className="main__text">
+            <img src={logo2} alt="logo2" />
             </div>
         </div>
     );

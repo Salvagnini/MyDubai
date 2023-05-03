@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import '../../components/Logo/Logo.js';
 import '../Header/Header.scss';
 
@@ -6,7 +6,11 @@ import logo from "../../containers/Header/image/Logo.png";
 
 
  const Header = () => {
+    const [showMenu, setShowMenu] = useState(false);
 
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    }
     return (
         <div className="nav">
             <div className="nav__logo">
@@ -17,7 +21,17 @@ import logo from "../../containers/Header/image/Logo.png";
                 <p>Real Estate</p>
             </div>
             <div className="nav__links">
-                <a className="nav__links__li nav__links__li__buy">BUY</a>
+                <div className="nav__links__dropdown">
+                    <a className="nav__links__li nav__links__li__buy" onClick={toggleMenu}>BUY</a>
+                        {showMenu && (
+                <div className="nav__links__dropdown__content" onMouseLeave={toggleMenu}>
+                    <a href="#">Category number one</a>
+                    <a href="#">Apartments in Dubai</a>
+                    <a href="#">Category number twenty five</a>
+                </div>
+                    )}
+            </div>
+                {/* <a className="nav__links__li nav__links__li__buy">BUY</a> */}
                 <a className="nav__links__li">BLOG</a>
                 <a className="nav__links__li">ABOUT</a>
                 <a className="nav__links__li">CONTACT</a>
